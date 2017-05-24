@@ -10,8 +10,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libpng12-dev \
         libzmq3-dev \
         pkg-config \
-        python \
-        python-dev \
+        python3 \
+        python3-dev \
+        python3-pip \
         rsync \
         software-properties-common \
         unzip \
@@ -19,11 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
-    python get-pip.py && \
-    rm get-pip.py
-
-RUN pip --no-cache-dir install \
+RUN pip3 --no-cache-dir install \
         ipykernel \
         jupyter \
         matplotlib \
@@ -35,7 +32,7 @@ RUN pip --no-cache-dir install \
         pymongo \
         requests \
         && \
-    python -m ipykernel.kernelspec
+    python3 -m ipykernel.kernelspec
 
 # --- DO NOT EDIT OR DELETE BETWEEN THE LINES --- #
 # These lines will be edited automatically by parameterized_docker_build.sh. #
@@ -44,7 +41,7 @@ RUN pip --no-cache-dir install \
 # RUN rm -f /_PIP_FILE_
 
 # Install TensorFlow CPU version from central repo
-RUN pip --no-cache-dir install \
+RUN pip3 --no-cache-dir install \
     http://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.0-cp27-none-linux_x86_64.whl
 # --- ~ DO NOT EDIT OR DELETE BETWEEN THE LINES --- #
 
