@@ -35,6 +35,8 @@ RUN pip --no-cache-dir install \
         scipy \
         sklearn \
         pandas \
+        pymongo \
+        requests \
         && \
     python -m ipykernel.kernelspec
 
