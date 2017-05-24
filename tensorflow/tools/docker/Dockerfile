@@ -32,6 +32,8 @@ RUN pip --no-cache-dir install \
         sklearn \
         pandas \
         Pillow \
+        pymongo \
+        requests \
         && \
     python -m ipykernel.kernelspec
 
