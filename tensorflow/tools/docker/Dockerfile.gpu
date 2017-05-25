@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libpng12-dev \
         libzmq3-dev \
         pkg-config \
+        python \
+        python-dev \
         python3 \
         python3-dev \
         python3-setuptools \
